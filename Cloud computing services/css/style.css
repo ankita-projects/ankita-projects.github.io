@@ -1,0 +1,54 @@
+.navbar .nav-link{
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.navbar .nav-item.active {
+    border-left:rgb(0, 162, 255)153, 153, 160 3px solid;
+}
+ 
+.carousel-item{
+    height: 450px;
+}
+
+.carousel-image-1{
+    background: url('../img/image1.jpg');
+    background-size: cover;
+}
+
+.carousel-image-2{
+    background: url('../img/image2.jpg');
+    background-size: cover;
+}
+
+.carousel-image-3{
+    background: url('../img/image3.jpg');
+    background-size: cover;   
+}   
+
+#home-heading{
+    position: relative;
+    min-height: 200px;
+    background:url('../img/lights.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff
+   }
+
+   #video-play{
+    position: relative;
+    min-height: 200px;
+    background:url('../img/media.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 0-300px;
+    text-align: center;
+    color:   
+   }
+
+   #video-play a{
+       color: rgb(18, 64, 116);
+   }
