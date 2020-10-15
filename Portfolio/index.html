@@ -73,6 +73,69 @@
                 </div>
             </div>
         </header>
+        <!--HOME-->
+        <div id="home" class="collapse-show">
+            <div class="card card-body bg-primary text-white py-5">
+                <h2>Introduction</h2>
+                <p class="lead">I am an engineer, I have done my Bachelors of engineering in Electronics
+                    and Instrumentation from India. I have a work experience of more than 10 years.I worked as an Instrumentation engineer in one of the largest petrochemical plant in India for 4 years and I have 5 plus years of teaching experince.
+                    </p>
+            </div>
+
+            <div class="card card-body py-5">
+                <h3>My Skills</h3>
+                <p>
+                    1. Helsinki university MOOC course “Elements or AI” -Completed
+                    2. Aalto Open University "Introduction to web development and programming"-Completed
+                    3. Udemy’s "Bootsrap 4 from scratch"–Completed
+                 </p>
+                 <hr>
+                 <h4>HTML 5</h4>
+                 <div class="progress mb-3">
+                     <div class="progress-bar bg-success" style="width:70%"></div>
+                  </div>
+                  <h4>CSS</h4>
+                 <div class="progress mb-3">
+                     <div class="progress-bar bg-success" style="width:50%"></div>
+                  </div>
+                  <h4>JavaScript</h4>
+                 <div class="progress mb-3">
+                     <div class="progress-bar bg-success" style="width:40%"></div>
+                  </div>
+                  <h4>React</h4>
+                 <div class="progress mb-3">
+                     <div class="progress-bar bg-success" style="width:30%"></div>
+                  </div>
+            </div>
+        </div>
+
+        <!--Resume-->
+       <div id="resume" class="collapse">
+        <div class="card card-body bg-success text-white py-5">
+            <h2>My Resume</h2>
+            <p class="lead">A passionate Electronic engineer with 4 years of experience in
+                petrochemical industry with hands on knowledge in Field and Controlroom instrument's maintenance, troubleshooting and commissioning
+                life cycle.
+                Highly energetic and committed professional teacher with strong
+                academic background and practical experience in modern and
+                innovative teaching techniques seeks to provide quality education to
+                students. I have been working with Finnish education system for the
+                past 4 years 
+                </p>
+        </div>
+
+       </div>
+
+        <!--Footer-->
+        <footer id="main-footer" class="p-5 bg-dark text-white">
+          <div class="row">
+            <div class ="col-md-6">
+            <a href= "#" class="btn btn-outline-light">
+            <i class="fas fa-cloud"></i>Download Resume
+            </a>
+            </div>
+          </div>
+          </footer>
     </div>
 
 
@@ -82,8 +145,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js " integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T " crossorigin="anonymous "></script>
 
     <script>
-        // Get the current year for the copyright
-        $('#year').text(new Date().getFullYear());
+      
+        $('.port-item').click(function(){
+            $('.collapse').collapse('hide');
+        });
+        
     </script>
 </body>
 
