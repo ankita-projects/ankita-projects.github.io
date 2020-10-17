@@ -204,8 +204,7 @@
             <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox">
               <img src="https://unsplash.it/600.jpg?image=255" alt="" class="img-fluid">
             </a>
-          </div>
-        </div>
+        
 
         <div class="row no-gutters">
           <div class="col-md-3">
@@ -301,16 +300,16 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous"></script>
 
   <script>
-    $('.port-item').click(function () {
+    $('.port-item').click(function(){
       $('.collapse').collapse('hide');
     });
 
-    $(document).on('click', '[data-toggle="lightbox"]', function (e) {
+    $(document).on('click','[data-toggle="lightbox"]', function (e) {
       e.preventDefault();
-      $(this).ekkoLightbox();
+      $(this).ekkolightbox();
     });
   </script>
 </body>
