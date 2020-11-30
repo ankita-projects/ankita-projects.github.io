@@ -1,0 +1,36 @@
+body{
+    font-family: 'open sans' sans-serif;
+    background-color: black;
+    
+}
+#container {
+    width: 1000px;
+    height: 550px;
+    background-image: url('back.jfif') ;
+    margin : 100px auto;
+
+}
+#calculator {
+     width : 320px;
+     height : 500px;
+     background-color: aliceblue;
+     margin : 0 auto;
+     top: 20px;
+     position : relative;
+     border-radius: 5 px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) 0 6px 20px 0 rgba(0, 0, 0, 0.19 );
+}     
+#keyboard {
+    border: 1px solid black;
+  background-color: lightblue;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+
+}     
+
+#result{
+    height: 120px;
+    width : 320px;
+}

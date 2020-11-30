@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>HTML Calculator</title>
+  </head>
+  <body>
+    A simple calculator
+    <div id="container">
+      <div id="calculator">
+        <div id="result"></div>
+        <div id="keyboard">
+          <input type="text" name="ans" value="" id="display" disabled/><br />
+          <input type="button" value="1" onclick="putDisplay(event)" />       
+          <input type="button" value="2" onclick="putDisplay(event)" />
+          <input type="button" value="3" onclick="putDisplay(event)" />
+          <input type="button" value="+" onclick="putDisplay(event)" /><br />
+          <input type="button" value="4" onclick="putDisplay(event)" />
+          <input type="button" value="5" onclick="putDisplay(event)" />
+          <input type="button" value="6" onclick="putDisplay(event)" />
+          <input type="button" value="-" onclick="putDisplay(event)" /><br />
+          <input type="button" value="7" onclick="putDisplay(event)" />
+          <input type="button" value="8" onclick="putDisplay(event)" />
+          <input type="button" value="9" onclick="putDisplay(event)" />
+          <input type="button" value="*" onclick="putDisplay(event)" /><br />
+          <input type="button" value="0" onclick="putDisplay(event)" />
+          <input type="button" value="/" onclick="putDisplay(event)" />
+          <input type="button" value="=" onclick="calculate()" />
+          <input type="button" value="C" onclick="clearDisplay()" /><br />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function putDisplay(event) {
+        var source = event.target || event.srcElement;
+        var displayElement = document.getElementById("display");
+        var existingValue = displayElement.value;
+        var newValue = existingValue + source.value;
+        displayElement.value = newValue; //
+      }
+      function calculate() {
+        var displayElement = document.getElementById("display");
+      
+        var equation = displayElement.value;
+        if (equation.indexOf("+") > 0) {
+          var numbers = equation.split("+");
+        
+
+          var firstNum = parseInt(numbers[0]);
+          var secondNum = parseInt(numbers[1]);
+          var result = firstNum + secondNum;
+          console.log(result);
+          displayElement.value = result;
+        }
+        if (equation.indexOf("-") > 0) {
+          var numbers = equation.split("-");
+
+          var firstNum = parseInt(numbers[0]);
+          var secondNum = parseInt(numbers[1]);
+          var result = firstNum - secondNum;
+
+          displayElement.value = result;
+        }
+        if (equation.indexOf("*") > 0) {
+          var numbers = equation.split("*");
+
+          var firstNum = parseInt(numbers[0]);
+          var secondNum = parseInt(numbers[1]);
+          var result = firstNum * secondNum;
+          console.log(result);
+          displayElement.value = result;
+        }
+
+        if (equation.indexOf("/") > 0) {
+          var numbers = equation.split("/");
+          console.log(numbers);
+
+          var firstNum = parseInt(numbers[0]);
+          var secondNum = parseInt(numbers[1]);
+          var result = firstNum / secondNum;
+          displayElement.value = result;
+        }
+      }
+
+      function clearDisplay() {
+        var clear = document.getElementById("display");
+        clear.value = " ";
+      }
+    </script>
+  </body>
+</html>
