@@ -1,0 +1,32 @@
+<html>
+<body>
+
+<p>Click the button to show speed.</p>
+
+<button onclick="myFunction()">Speed</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var distance = prompt("Please enter distance in Km");
+  if (distance>0) {
+ 
+  var time = prompt("Please enter time in hour");
+  var speed =distance/time;
+    document.getElementById("demo").innerHTML =
+    speed + "km/h";
+}
+else{
+    document.getElementById("demo").innerHTML =
+    "stop program";
+}
+ 
+  
+   
+  }
+
+</script>
+
+</body>
+</html>
