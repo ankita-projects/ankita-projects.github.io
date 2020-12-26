@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset=utf-8 />
+                <title>Tambola Game</title>
+              
+                <link rel="stylesheet" href="tambola.css">
+                  
+            </head>
+            <body >
+                <h1>Tambola Game</h1>
+                <h2>Welcome, who are you?</h2>
+                 <button id = "playerbutton" onclick="tambola.displayTicket()" style="display:block;">Player</button><br>
+                 <button id ="gameMaster" onclick="tambola.displayBoard()" style="display:block;">Game Master</button>
+                 <button id ="generateNumber" onclick="tambola.showNumber()" style="display:none;">Draw number</button>
+                 <table  id ="ticket"  style =  "width:250px; height:75px; display:none;" ></table><br><br>
+                                     
+                    <table id = "board" style= "width: 205px; display:none"></table>
+                    <div id="displayNumber" >
+                        <h1 id="heading"></h1>
+                    </div>
+                        
+                                          
+            </body>
+            <script type="text/javascript" src="tambola.js"></script>
+        </html>            
+           
+            
