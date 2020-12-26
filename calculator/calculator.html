@@ -33,7 +33,8 @@
 
     <script>
       function putDisplay(event) {
-        var source = event.target || event.srcElement;
+        var source = event.target || event.srcElement;                   //every clickhandler has default parameter called event,event triggers the function,
+                                                                       // browser can give us event, event parameter is a object,it contain lots of attribute, example target element or source element
         var displayElement = document.getElementById("display");
         var existingValue = displayElement.value;
         var newValue = existingValue + source.value;

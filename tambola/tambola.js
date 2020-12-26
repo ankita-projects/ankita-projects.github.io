@@ -27,12 +27,46 @@ let tambola = {
     return true;
   },
   generateTicket: function () {
+    var ticketData = [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ];
+    var randomNumberList = [];
+    while (randomNumberList.length < 15) {
+      let randomNumber = Math.floor(Math.random() * 91);
+      let existInTktData = randomNumberList.includes(randomNumber);
+      if (!existInTktData && randomNumber!=0) {
+        randomNumberList.push(randomNumber);
+      }
+    }
+    for(i=0;i<3;i++){                                        
+    var numberPositionList = [];
+    while (numberPositionList.length < 5) {                                       //determing positions of where to put 5 random numbers
+      let randomNumber = Math.floor(Math.random() * 9);                          // range of random number
+      let existInPositionData = numberPositionList.includes(randomNumber);            // not repeating the position of numbers
+      if (!existInPositionData) {
+        numberPositionList.push(randomNumber);
+      }
+    }    
+    console.log("numberPositionList ", numberPositionList)                                                               // this is for postion array,
+    const sliceOfRandomNumberList = randomNumberList.splice(0, 5);          // breaking random num in 5 chunks
+    console.log("sliceOfRandomNumberList ", sliceOfRandomNumberList)
+    numberPositionList.forEach((item,index) => {                           //item is item of 
+      ticketData[i][item] = sliceOfRandomNumberList[index];
+    });
+   
+  }
+
+   
+    console.log(ticketData);
+
     var ticket = [
       [0, 12, 0, 0, 49, 67, 0, 2, 0],
       [0, 12, 0, 0, 49, 67, 0, 2, 0],
       [0, 12, 0, 0, 49, 67, 0, 2, 0],
     ];
-    return ticket;
+    return ticketData;
   },
 
   displayTicket: function () {
@@ -47,9 +81,11 @@ let tambola = {
       for (j = 0; j < 9; j++) {
         var cellNumber = document.createElement("td");
         cellNumber.setAttribute("style", "height:20px;width:30px");
+
         if (ticketData[i][j] != 0) {
           //because we don't want to show 0
           cellNumber.innerHTML = ticketData[i][j];
+          cellNumber.setAttribute("onclick", "tambola.crossTktNumber(event)");
         }
         row.appendChild(cellNumber);
       }
@@ -57,8 +93,9 @@ let tambola = {
     }
   },
 
-   crossTktNumber : function(){
-
+  crossTktNumber: function (event) {
+    var source = event.target || event.srcElement;
+    source.style.textDecoration = "line-through";
   },
 
   displayBoard: function () {
