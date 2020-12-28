@@ -51,8 +51,16 @@ table, th, td {
 .player{
   border-radius: 70%;
 }
- .tkttable{
-  table-layout: auto;
-  width : 100%;  
+ 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+#gameMaster{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+};
 

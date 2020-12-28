@@ -78,8 +78,8 @@ let tambola = {
       var row = document.createElement("tr");
       for (j = 0; j < 9; j++) {                                             //UI for tkt generate
         var cellNumber = document.createElement("td");
-        cellNumber.setAttribute("style", "height:100px;width:300px");
-        cellNumber.setAttribute("class","tkttable")
+        cellNumber.setAttribute("style", "height:20px;width:40px");
+        
 
         if (ticketData[i][j] != 0) {
           //because we don't want to show 0
