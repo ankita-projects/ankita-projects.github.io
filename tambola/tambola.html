@@ -8,11 +8,47 @@
                   
             </head>
             <body >
-                <h1>Tambola Game</h1>
+              <div class="a">
+                <h1>Tambola-The fun game of probability</h1>
+                </div>
+                  
+  <section id="showcase">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel inner">
+        <div class="carousel-item carousel-image-1 active">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block text-right">
+              <h1 class="display-3"></h1>
+            </div>
+          </div>
+        </div>
+        
+        <a href="#myCarousel" data-slide="prev" class="carousel-control-prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a> 
+
+        </div>
+  </section>
+
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // Get the current year for the copyright
+    $('#year').text(new Date().getFullYear());
+  </script>
+                  
+                <div class="b">
                 <h2>Welcome, who are you?</h2>
-                 <button id = "playerbutton" onclick="tambola.displayTicket()" style="display:block;">Player</button><br>
-                 <button id ="gameMaster" onclick="tambola.displayBoard()" style="display:block;">Game Master</button>
-                 <button id ="generateNumber" onclick="tambola.showNumber()" style="display:none;">Draw number</button>
+                </div>
+                <img src="button.jpg" id = "playerbutton" onclick="tambola.displayTicket()" style="display:block;">
+                 <h1 class ="gamemaster" id ="gameMaster" onclick="tambola.displayBoard()" style="display:block;">Game Master</h1>
+                 <h1 id ="generateNumber" onclick="tambola.showNumber()" style="display:none;">Draw number</h1>
                  <table  id ="ticket"  style =  "width:250px; height:75px; display:none;" ></table><br><br>
                                      
                     <table id = "board" style= "width: 205px; display:none"></table>

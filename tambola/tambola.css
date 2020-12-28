@@ -3,6 +3,16 @@ table, th, td {
     row-gap: 500px;
    
   }
+  div.a {
+    text-align: center;
+    font-size: x-large;
+  }
+
+  div.b {
+    text-align: center;
+    font-size: x-large;
+  }
+  
   h1{
       color: rgb(229, 255, 0);
   }
@@ -16,3 +26,33 @@ table, th, td {
     table-layout: fixed;
     width: 300px;  
   }
+
+  .carousel-item{
+    height: 350px;
+}
+
+.carousel-image-1{
+    background: url('image1.jfif');
+    background-size:cover;
+}
+.button{
+  background-color: rgb(68, 177, 204);
+  border: none;
+  color: white;
+  padding: 20px,32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.player{
+  border-radius: 70%;
+}
+ .tkttable{
+  table-layout: auto;
+  width : 100%;  
+}
+

@@ -1,0 +1,23 @@
+.carousel-item{
+    height: 350px;
+}
+
+.carousel-image-1{
+    background: url('image1.jfif');
+    background-size:cover;
+}
+
+.carousel-image-2{
+    background: url('image2.jpg');
+    background-size:cover;
+}
+
+.carousel-image-3{
+    background: url('image3.jfif');
+    background-size:cover;
+}
+
+.carousel-image-4{
+    background: url('image4.jpg');
+    background-size:cover;
+}

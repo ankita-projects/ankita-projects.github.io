@@ -1,6 +1,6 @@
 let tambola = {
-  board: [],
-  pickNumber: function () {
+  board: [],                           
+  pickNumber: function () {                                   //it generate a random number for board
     let number = Math.floor(Math.random() * 91);
     let checkNumber = this.board.includes(number);
     if (!checkNumber && number != 0) {
@@ -57,8 +57,6 @@ let tambola = {
     });
    
   }
-
-   
     console.log(ticketData);
 
     var ticket = [
@@ -71,16 +69,17 @@ let tambola = {
 
   displayTicket: function () {
     var ticketData = this.generateTicket();
-    var ticketTable = document.getElementById("ticket");
+    var ticketTable = document.getElementById("ticket");                  //
     ticketTable.style.display = "block";
     document.getElementById("playerbutton").style.display = "none";
     document.getElementById("gameMaster").style.display = "none";
 
     for (i = 0; i < 3; i++) {
       var row = document.createElement("tr");
-      for (j = 0; j < 9; j++) {
+      for (j = 0; j < 9; j++) {                                             //UI for tkt generate
         var cellNumber = document.createElement("td");
-        cellNumber.setAttribute("style", "height:20px;width:30px");
+        cellNumber.setAttribute("style", "height:100px;width:300px");
+        cellNumber.setAttribute("class","tkttable")
 
         if (ticketData[i][j] != 0) {
           //because we don't want to show 0
@@ -98,7 +97,7 @@ let tambola = {
     source.style.textDecoration = "line-through";
   },
 
-  displayBoard: function () {
+  displayBoard: function () {                                             // blank board
     var table = document.getElementById("board");
     document.getElementById("board").style.display = "block";
     document.getElementById("gameMaster").style.display = "none";
