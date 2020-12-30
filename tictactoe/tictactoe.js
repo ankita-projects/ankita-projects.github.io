@@ -1,28 +1,34 @@
 var turn = "player2";
+var gameOver = false;
 var counter = 0;
 let tictactoe = {
   cellClick: function (event) {
-    var source = event.target || event.srcElement;
-    console.log(source.id);
+    if (!gameOver) {
+      //
+      var source = event.target || event.srcElement;
+      console.log(source.id);
 
-    if (turn == "player2" && source.innerHTML == "") {
-      source.innerHTML = "O";
-      turn = "player1";
+      if (turn == "player2" && source.innerHTML == "") {
+        source.innerHTML = "O";
+        turn = "player1";
+      }
+      if (turn == "player1" && source.innerHTML == "") {
+        source.innerHTML = "X";
+        turn = "player2";
+      }
+
+      var isWinner = this.checkIfWinner(source.id, source.innerHTML);
+      if (isWinner) {
+        alert(turn + " You Won ");
+        gameOver = true;
+      }
+
+      if (counter == 8 && !isWinner) {
+        alert("Game draw");
+        gameOver = true;
+      }
+      counter++;
     }
-    if (turn == "player1" && source.innerHTML == "") {
-      source.innerHTML = "X";
-      turn = "player2";
-    }
-    
-     var isWinner = this.checkIfWinner(source.id, source.innerHTML);
-    if(isWinner){
-      alert(turn + " You Won ")
-    }
-    if(counter==8 && !isWinner){
-      alert("Game draw");
-    }
-    counter++;
-    
   },
 
   displayBoard: function () {
@@ -45,7 +51,6 @@ let tictactoe = {
     }
   },
   checkIfWinner: function (id, valueAtId) {
-   
     var winnerCombinations = [
       ["0-0", "0-1", "0-2"],
       ["1-0", "1-1", "1-2"],
@@ -56,22 +61,25 @@ let tictactoe = {
       ["0-0", "1-1", "2-2"],
       ["0-2", "1-1", "2-0"],
     ];
-    for (i = 0; i < 8; i++) {
-      let winnerFound = true;
+    for (let i = 0; i < winnerCombinations.length; i++) {
+      var winnerFound = false;
       if (winnerCombinations[i].includes(id)) {
-        for (j = 0; j < 3; j++) {
-          var tableData = document.getElementById(winnerCombinations[i][j]);                                                 
-          if(tableData.innerHTML != valueAtId){
-            winnerFound = false
+        for (let j = 0; j < winnerCombinations[i].length; j++) {
+          if (
+            document.getElementById(winnerCombinations[i][j]).innerHTML ==
+            valueAtId
+          ) {
+            winnerFound = true;
+          } else {
+            winnerFound = false;
             break;
           }
         }
-        if(winnerFound){
+        if (winnerFound) {
           return winnerFound;
         }
       }
-     
+      return false;
     }
-    return false;
   },
 };

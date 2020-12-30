@@ -1,5 +1,6 @@
 let tambola = {
-  board: [],                           
+  board: [],
+  ticket: [],
   pickNumber: function () {                                   //it generate a random number for board
     let number = Math.floor(Math.random() * 91);
     let checkNumber = this.board.includes(number);
@@ -26,46 +27,50 @@ let tambola = {
     console.log("You win");
     return true;
   },
+  /*generateTicket: function () {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", 'https://uyxovs1z2k.execute-api.us-east-2.amazonaws.com/default/tambola', false); // false for synchronous request
+    xmlHttp.send(null);
+    const newLocal = xmlHttp.responseText;
+    console.log(newLocal)
+    return JSON.parse(newLocal);
+  },*/
   generateTicket: function () {
     var ticketData = [
       [0, 0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 0, 0],
     ];
-    var randomNumberList = [];
-    while (randomNumberList.length < 15) {
-      let randomNumber = Math.floor(Math.random() * 91);
-      let existInTktData = randomNumberList.includes(randomNumber);
-      if (!existInTktData && randomNumber!=0) {
-        randomNumberList.push(randomNumber);
+    for (i = 0; i < 3; i++) {
+      var numberPositionList = [];
+      while (numberPositionList.length < 5) {                                       //determing positions of where to put 5 random numbers
+        let randomNumber = Math.floor(Math.random() * 9);                          // range of random number
+        let existInPositionData = numberPositionList.includes(randomNumber);            // not repeating the position of numbers
+        if (!existInPositionData) {
+          numberPositionList.push(randomNumber);
+        }
       }
-    }
-    for(i=0;i<3;i++){                                        
-    var numberPositionList = [];
-    while (numberPositionList.length < 5) {                                       //determing positions of where to put 5 random numbers
-      let randomNumber = Math.floor(Math.random() * 9);                          // range of random number
-      let existInPositionData = numberPositionList.includes(randomNumber);            // not repeating the position of numbers
-      if (!existInPositionData) {
-        numberPositionList.push(randomNumber);
-      }
-    }    
-    console.log("numberPositionList ", numberPositionList)                                                               // this is for postion array,
-    const sliceOfRandomNumberList = randomNumberList.splice(0, 5);          // breaking random num in 5 chunks
-    console.log("sliceOfRandomNumberList ", sliceOfRandomNumberList)
-    numberPositionList.forEach((item,index) => {                           //item is item of 
-      ticketData[i][item] = sliceOfRandomNumberList[index];
-    });
-   
-  }
-    console.log(ticketData);
+      // this is for postion array,
+      // breaking random num in 5 chunks
+      for (var j = 0; j < numberPositionList.length; j++) {
+        ticketData[i][numberPositionList[j]] = this.generateRandomNumberInRange(numberPositionList[j] + 1);
 
-    var ticket = [
-      [0, 12, 0, 0, 49, 67, 0, 2, 0],
-      [0, 12, 0, 0, 49, 67, 0, 2, 0],
-      [0, 12, 0, 0, 49, 67, 0, 2, 0],
-    ];
+      }
+
+    }
+    console.log(ticketData);
     return ticketData;
   },
+  generateRandomNumberInRange: function (number) {
+    const numberForTicket = Math.floor(Math.random() * ((number * 10) - ((number - 1) * 10)) + (number - 1) * 10);
+    if (!this.ticket.includes(numberForTicket)) {
+      this.ticket.push(numberForTicket)
+    } else {
+      return this.generateRandomNumberInRange(number)
+    }
+    return numberForTicket;
+  },
+
 
   displayTicket: function () {
     var ticketData = this.generateTicket();
@@ -79,7 +84,7 @@ let tambola = {
       for (j = 0; j < 9; j++) {                                             //UI for tkt generate
         var cellNumber = document.createElement("td");
         cellNumber.setAttribute("style", "height:20px;width:40px");
-        
+
 
         if (ticketData[i][j] != 0) {
           //because we don't want to show 0

@@ -6,10 +6,28 @@
 }
 
 .b{
-        width:5%;
-        height: 5%;
+        width:100%;
+        height:100%;
         border: 0.2px solid black;
         
         text-align: center;
     
 }
+body {
+    background-color: rgb(230, 217, 173);
+  }
+
+  .container { 
+    height: 700px;
+    position: relative;
+    border: 3px solid rgb(1, 10, 1); 
+  }
+  
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
