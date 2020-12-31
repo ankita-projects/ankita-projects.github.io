@@ -4,7 +4,7 @@ var counter = 0;
 let tictactoe = {
   cellClick: function (event) {
     if (!gameOver) {
-      //
+    
       var source = event.target || event.srcElement;
       console.log(source.id);
 
@@ -65,10 +65,9 @@ let tictactoe = {
       var winnerFound = false;
       if (winnerCombinations[i].includes(id)) {
         for (let j = 0; j < winnerCombinations[i].length; j++) {
-          if (
-            document.getElementById(winnerCombinations[i][j]).innerHTML ==
-            valueAtId
-          ) {
+          if (document.getElementById(winnerCombinations[i][j]).innerHTML ==
+          valueAtId)
+           {
             winnerFound = true;
           } else {
             winnerFound = false;
@@ -79,7 +78,8 @@ let tictactoe = {
           return winnerFound;
         }
       }
-      return false;
+     
     }
-  },
+    return false;
+  }
 };
