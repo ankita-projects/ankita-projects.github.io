@@ -1,7 +1,8 @@
 let tambola = {
   board: [],
   ticket: [],
-  pickNumber: function () {                                   //it generate a random number for board
+  pickNumber: function () {
+    //it generate a random number for board
     let number = Math.floor(Math.random() * 91);
     let checkNumber = this.board.includes(number);
     if (!checkNumber && number != 0) {
@@ -43,9 +44,10 @@ let tambola = {
     ];
     for (i = 0; i < 3; i++) {
       var numberPositionList = [];
-      while (numberPositionList.length < 5) {                                       //determing positions of where to put 5 random numbers
-        let randomNumber = Math.floor(Math.random() * 9);                          // range of random number
-        let existInPositionData = numberPositionList.includes(randomNumber);            // not repeating the position of numbers
+      while (numberPositionList.length < 5) {
+        //determing positions of where to put 5 random numbers
+        let randomNumber = Math.floor(Math.random() * 9); // range of random number
+        let existInPositionData = numberPositionList.includes(randomNumber); // not repeating the position of numbers
         if (!existInPositionData) {
           numberPositionList.push(randomNumber);
         }
@@ -53,38 +55,47 @@ let tambola = {
       // this is for postion array,
       // breaking random num in 5 chunks
       for (var j = 0; j < numberPositionList.length; j++) {
-        ticketData[i][numberPositionList[j]] = this.generateRandomNumberInRange(numberPositionList[j] + 1);
-
+        ticketData[i][numberPositionList[j]] = this.generateRandomNumberInRange(
+          numberPositionList[j] + 1
+        );
       }
-
     }
     console.log(ticketData);
     return ticketData;
   },
   generateRandomNumberInRange: function (number) {
-    const numberForTicket = Math.floor(Math.random() * ((number * 10) - ((number - 1) * 10)) + (number - 1) * 10);
+    const numberForTicket = Math.floor(
+      Math.random() * (number * 10 - (number - 1) * 10) + (number - 1) * 10
+    );
     if (!this.ticket.includes(numberForTicket)) {
-      this.ticket.push(numberForTicket)
+      this.ticket.push(numberForTicket);
     } else {
-      return this.generateRandomNumberInRange(number)
+      return this.generateRandomNumberInRange(number);
     }
     return numberForTicket;
   },
 
-
   displayTicket: function () {
-    var ticketData = this.generateTicket();
-    var ticketTable = document.getElementById("ticket");                  //
+    var cookie = this.getCookie("ticket");
+    var ticketData;
+    if (cookie != "") {
+      ticketData = JSON.parse(cookie);                   //it converts string into object
+    } else {
+      ticketData = this.generateTicket();
+      document.cookie = "ticket=" + JSON.stringify(ticketData);                  //tkt is store in cookie,
+    }
+
+    var ticketTable = document.getElementById("ticket"); //
     ticketTable.style.display = "block";
     document.getElementById("playerbutton").style.display = "none";
     document.getElementById("gameMaster").style.display = "none";
 
     for (i = 0; i < 3; i++) {
       var row = document.createElement("tr");
-      for (j = 0; j < 9; j++) {                                             //UI for tkt generate
+      for (j = 0; j < 9; j++) {
+        //UI for tkt generate
         var cellNumber = document.createElement("td");
         cellNumber.setAttribute("style", "height:20px;width:40px");
-
 
         if (ticketData[i][j] != 0) {
           //because we don't want to show 0
@@ -96,13 +107,29 @@ let tambola = {
       ticketTable.appendChild(row);
     }
   },
+  getCookie: function (cname) {                             //it get cookie with cookie name
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == " ") {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  },
 
   crossTktNumber: function (event) {
     var source = event.target || event.srcElement;
     source.style.textDecoration = "line-through";
   },
 
-  displayBoard: function () {                                             // blank board
+  displayBoard: function () {
+    // blank board
     var table = document.getElementById("board");
     document.getElementById("board").style.display = "block";
     document.getElementById("gameMaster").style.display = "none";
