@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Weather Monitoring</title>
+    <link rel="stylesheet" href="weather.css">
+    <script src ="weather.js"></script>
+</head>
+<body>
+    
+    <h1>Weather Monitoring</h1>
+    
+    <p>City Name</p>
+    <i class='fas fa-map-marker-alt'></i>
+
+    <input type ="text" id ="weather" class = "city" placeholder="Enter city name here"><br><br>
+    <button onclick="getWeatherInfo()" name="submit" type="submit">Submit</button>
+
+ <div class = "table">
+<table style="width:100%" id="weatherTable">
+  <tr>
+    <th>Weather</th>
+    <th>Country</th> 
+    <th>Temprature(in fernite)</th>
+  </tr>
+</div>
+</table>
+</body>
+</html>
