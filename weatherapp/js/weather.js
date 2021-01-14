@@ -47,6 +47,9 @@ function buildTable(response){
             break;
          case "Haze":
                 document.getElementById("body").style.backgroundImage= "url('images/haze.png')";
+            break;
+            case "Fog":
+                document.getElementById("body").style.backgroundImage= "url('images/fog.jpg')";    
         }
         
         
