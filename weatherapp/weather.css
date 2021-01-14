@@ -1,6 +1,8 @@
 body{
     background-image: url("images/image.png");
     text-align: center;
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
 }
 h1{
     text-align: center;

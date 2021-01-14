@@ -1,7 +1,7 @@
 function getWeatherInfo(){
     const cityName=document.getElementById("weather").value;
     const apiKey = "c0b41b78dbafd84aa17b3a6e5dd1dcdb";
-    const response = httpGet("https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" +apiKey);  // retriving data from API server
+    const response = httpGet("https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" +apiKey + "&units=metric" ) ;  // retriving data from API server
     buildTable(response);
 }
 function httpGet(theUrl)
@@ -22,13 +22,39 @@ function buildTable(response){
         country.innerHTML = response.sys.country;
         var temprature = document.createElement("td");
         temprature.innerHTML = response.main.temp;
+        console.log(response);
+        
+        
+        //cityName.innerHTML = response.main.;
         row.appendChild(weather);
         row.appendChild(country);
         row.appendChild(temprature);
        
         table.appendChild(row);
+
+        switch(response.weather[0].main){
+        case "Clear":
+            document.getElementById("body").style.backgroundImage= "url('images/clearsky.jpeg')";
+            break;
+        case "Clouds":
+            document.getElementById("body").style.backgroundImage= "url('images/cloudy.jpg')"; 
+            break;
+        case "Snow":
+            document.getElementById("body").style.backgroundImage= "url('images/snow.jpg')";  
+            break;
+        case "Rain":
+            document.getElementById("body").style.backgroundImage= "url('images/rainy.jpg')";  
+            break;
+         case "Haze":
+                document.getElementById("body").style.backgroundImage= "url('images/haze.png')";
+        }
         
         
+        function fToC(temp) 
+        {
+          var fToCel =(parseInt(temp) - 32) * 5 / 9 ;
+          return fToCel;
+        } 
         
         
         
