@@ -49,7 +49,10 @@ function buildTable(response){
                 document.getElementById("body").style.backgroundImage= "url('images/haze.png')";
             break;
             case "Fog":
-                document.getElementById("body").style.backgroundImage= "url('images/fog.jpg')";    
+                document.getElementById("body").style.backgroundImage= "url('images/fog.jpg')";  
+            break;
+                case "Mist":
+                    document.getElementById("body").style.backgroundImage= "url('images/mist.jpg')";   
         }
         
         
