@@ -1,4 +1,4 @@
-function getWeatherInfo() {
+ getWeatherInfo=()=> {
   const cityName = document.getElementById("weather").value;
   const apiKey = "c0b41b78dbafd84aa17b3a6e5dd1dcdb";
   const response = httpGet(
@@ -10,22 +10,22 @@ function getWeatherInfo() {
   ); // retriving data from API server
   buildTable(response);
 }
-function httpGet(theUrl) {
-  var xmlHttp = new XMLHttpRequest();
+ httpGet=(theUrl)=> {
+ let xmlHttp = new XMLHttpRequest();
   xmlHttp.open("GET", theUrl, false); // false for synchronous request
   xmlHttp.send(null);
   console.log("dfdfgöldfkögldflkglödfkögldfölkg");
   return JSON.parse(xmlHttp.responseText);
 }
-function buildTable(response) {
-  var table = document.getElementById("weatherTable");
+ buildTable=(response)=> {
+  let table = document.getElementById("weatherTable");
 
-  var row = document.createElement("tr");
-  var weather = document.createElement("td");
+  let row = document.createElement("tr");
+  let weather = document.createElement("td");
   weather.innerHTML = response.weather[0].main;
-  var country = document.createElement("td");
+  let country = document.createElement("td");
   country.innerHTML = response.sys.country;
-  var temprature = document.createElement("td");
+  let temprature = document.createElement("td");
   temprature.innerHTML = response.main.temp;
   console.log(response);
 
@@ -67,7 +67,7 @@ function buildTable(response) {
   }
 
   function fToC(temp) {
-    var fToCel = ((parseInt(temp) - 32) * 5) / 9;
+    let fToCel = ((parseInt(temp) - 32) * 5) / 9;
     return fToCel;
   }
 }
