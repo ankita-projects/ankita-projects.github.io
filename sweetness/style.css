@@ -1,0 +1,120 @@
+*{
+  margin:0; padding:0;
+  box-sizing: border-box;
+  font-family: "Exo 2",sans-serif;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+html{
+ 
+  scroll-behavior: smooth;
+}
+body{
+  overflow-x: hidden;
+}
+
+
+
+.navbar .nav-link{
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    color: lightcoral;
+}
+
+.navbar .nav-item.active {
+    border-left:rgb(0, 162, 255)153, 153, 160 3px solid;
+    color: lightcoral;
+}
+ 
+.carousel-item{
+    height: 350px;
+    color: lightcoral;
+}
+
+.display-3{
+    color: rgb(10, 10, 10);
+    font-family: cursive;
+    font-style: italic;
+    font-display:unset;
+}
+.lead{
+    color: rgb(10, 10, 10);
+    font-family: cursive;
+    font-style: italic;
+    font-display:unset;
+    font-size:x-large;
+}
+
+.carousel-image-1{
+    background: url('../images/cake25.jpg');
+   
+    background-size:auto;
+   
+    
+}
+
+.carousel-image-2{
+    background: url('../images/cupcake.jpg');
+    background-size:unset;
+}
+
+.carousel-image-3{
+    background: url('../images/cake23.jpg');
+    background-size:unset;   
+}   
+
+#home-heading{
+    position: relative;
+    min-height: 200px;
+    background:url('../images/cake2.jpg');
+    background-attachment: fixed;
+    background-size:cover;   
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff
+   }
+
+   #video-play{
+    position: relative;
+    min-height: 200px;
+    background:url('../images/cake19.jpg');
+    background-attachment: fixed;
+    background-size:unset;   
+    background-repeat: no-repeat;
+    background-position: 0-300px;
+    text-align: center;
+    color:   
+   }
+
+   #video-play a{
+       color: rgb(18, 64, 116);
+   }
+   .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
