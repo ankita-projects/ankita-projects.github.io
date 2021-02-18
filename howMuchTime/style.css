@@ -1,0 +1,45 @@
+body{
+
+    background-image: linear-gradient(to right,#e47a69,#a0387f);
+    font-family: roboto;
+    font-size: 25px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    height: 100%;
+}
+.display{
+    display: flex;
+    justify-content:space-between;
+   }
+h1{
+    font-family:roboto;
+    font-size:40px;
+    font-weight: bold;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    margin: 2rem;
+    padding: 30px;
+    margin: 5px 5px 5px 0;
+}
+
+.container1{
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    margin: 2rem;
+    padding: 30px;
+    margin: 5px 5px 5px 0;
+}
+#button{
+    padding:10px;
+    margin: 2rem;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+
