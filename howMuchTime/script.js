@@ -87,20 +87,23 @@ submit = (event) => {
   let daysLeft = Math.trunc(Difference_In_Days);
   let text = document.querySelector("p");
   let text1 = document.getElementById("text1");
+  let countdown = document.getElementById("countdown");
   let eventName = document.getElementById("eventName").value;
   text.textContent = daysLeft + " days left for " + eventName;
   let weekDays = weekdaysBetween(date2, date1);
   let bankHolidayList = getBankHolidaysExceptWeekend(date1.getFullYear());
+
   bankHolidayList.forEach((element) => {
     if (
       element.getTime() <= date1.getTime() &&
       element.getTime() >= date2.getTime()
     ) {
-       console.log("paari ho rahi hai")
-      weekDays = weekDays-1;
+      console.log("paari ho rahi hai");
+      weekDays = weekDays - 1;
     }
   });
   text1.textContent = weekDays + " buisness days left for " + eventName;
+  document.getElementById("countdown").setAttribute("style", "display: block;");
 };
 //The program count show many business days there is left until the entered date(fromtoday(start date) untiltheend dateand skipping Saturdays and Sundays). //
 
@@ -147,13 +150,54 @@ getBankHolidaysExceptWeekend = (year) => {
   });
   return holidayDates;
 };
-httpGet = (theUrl) => {
-  let xmlHttp = new XMLHttpRequest();
-  xmlHttp.open("GET", theUrl, false); // false for synchronous request
-  xmlHttp.send(null);
-  return JSON.parse(xmlHttp.responseText);
-};
-console.log(getBankHolidaysExceptWeekend("2021"));
+
+// setInterval after every second
+let timer = setInterval(() => {
+  let date1 = new Date(document.getElementById("date").value);
+  // Get the new time/date
+  let update = new Date();
+  // Calculate the new difference
+  let newDiff = date1 - update;
+  // Convert miliseconds into days, hours, minutes and seconds
+  let liveDiff = convertMiliseconds(newDiff);
+  // Display/Update result on screen
+  countdown.textContent = `
+      ${liveDiff["d"].toString().padStart(2, "0")} days 
+      ${liveDiff["h"].toString().padStart(2, "0")} hours 
+      ${liveDiff["m"].toString().padStart(2, "0")} minutes 
+      ${liveDiff["s"].toString().padStart(2, "0")} seconds `;
+
+  // Stop interval once countdown has reached 0
+  if (liveDiff <= 0) {
+    clearInterval(timer);
+  }
+}, 1000);
+
+function convertMiliseconds(miliseconds, format) {
+  let days, hours, minutes, seconds, total_hours, total_minutes, total_seconds;
+
+  total_seconds = parseInt(Math.floor(miliseconds / 1000));
+  total_minutes = parseInt(Math.floor(total_seconds / 60));
+  total_hours = parseInt(Math.floor(total_minutes / 60));
+  days = parseInt(Math.floor(total_hours / 24));
+
+  seconds = parseInt(total_seconds % 60);
+  minutes = parseInt(total_minutes % 60);
+  hours = parseInt(total_hours % 24);
+
+  switch (format) {
+    case "s":
+      return total_seconds;
+    case "m":
+      return total_minutes;
+    case "h":
+      return total_hours;
+    case "d":
+      return days;
+    default:
+      return { d: days, h: hours, m: minutes, s: seconds };
+  }
+}
 
 let button = document.getElementById("button");
 button.addEventListener("click", submit);
