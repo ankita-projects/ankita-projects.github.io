@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Management</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <script src="script"></script>
+    <div class="calculator">
+        <div class="input" id="input"></div>
+        <div class="buttons">
+            <div class="operators">
+                <div id="+" onclick="putDisplay(event)">+</div>
+                <div id="-" onclick="putDisplay(event)">-</div>
+                <div id="*" onclick="putDisplay(event)">*</div>
+                <div id="÷" onclick="putDisplay(event)">÷</div>
+            </div>
+            <div class="leftPanel">
+                <div class="numbers">
+                    <div id="7" onclick="putDisplay(event)">7</div>
+                    <div id="8" onclick="putDisplay(event)">8</div>
+                    <div id="9" onclick="putDisplay(event)">9</div>
+                </div>
+                <div class="numbers">
+                    <div id="4" onclick="putDisplay(event)">4</div>
+                    <div id="5" onclick="putDisplay(event)">5</div>
+                    <div id="6" onclick="putDisplay(event)">6</div>
+                </div>
+                <div class="numbers">
+                    <div id="1" onclick="putDisplay(event)">1</div>
+                    <div id="2" onclick="putDisplay(event)">2</div>
+                    <div id="3" onclick="putDisplay(event)">3</div>
+                </div>
+                <div class="numbers">
+                    <div id="0" onclick="putDisplay(event)">0</div>
+                    <div id="." onclick="putDisplay(event)">.</div>
+                    <div id="clear" value="C" onclick="clearDisplay()">C</div>
+                </div>
+            </div>
+            <div class="equal" id="result" onclick="calculate()">=</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

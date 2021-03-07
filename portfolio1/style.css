@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: "Chakra Petch", sans-serif;
+    background-color: #14213d;
+    background: #05080f url("https://source.unsplash.com/PzO_CitnJdI/") no-repeat
+      fixed center center/ cover;
+    color: #fffafb;
+  }
+  
+  h1 {
+    color: #fffafb;
+    text-transform: lowercase;
+    letter-spacing: 0.5ch;
+    font-size: 2rem;
+    font-weight: 300;
+    transition: all 0.3s ease;
+  }
+  .logo-link {
+    text-decoration: none;
+  }
+  
+  footer h2,
+  .hero-banner h2 {
+    font-size: 3rem;
+    text-align: center;
+    color: #fffafb;
+    font-weight: 400;
+    text-transform: capitalize;
+    z-index: 1;
+  }
+  
+  main h2 {
+    padding-bottom: 1rem;
+    letter-spacing: 0.25ch;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #abc7d9;
+  }
+  
+  p {
+    line-height: 150%;
+    font-size: 1.2rem;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  .back-to-top {
+    position: fixed;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-bottom: 35px solid #33eeffa8;
+    border-right: 25px solid transparent;
+    border-left: 25px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+  }
+  
+  .back-to-top:hover {
+    border-bottom: 35px solid #33eeff;
+  }
+  
+  /**************** Header area ****************/
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #05080f00;
+    width: 100%;
+    position: fixed;
+    padding: 3vh;
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+  
+  header li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 1rem;
+  }
+  
+  header li:hover {
+    border-bottom: 0.3rem solid #ff5a1f;
+    transition: all 0.1s ease;
+    margin-bottom: 0;
+  }
+  
+  header li a {
+    color: #33eeff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+  
+  /**************** Main area ****************/
+  
+  .container {
+    width: 88vw;
+    max-width: 992px;
+    margin: 0 auto;
+  }
+  
+  section {
+    clear: both;
+    padding: 6rem 0;
+    width: 100%;
+  }
+  
+  section:nth-child(even) {
+    background-color: #05080f;
+  }
+  
+  .hero-banner {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .hero-banner::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #14213d50;
+  }
+  
+  /**************** Work area ****************/
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+  }
+  
+  .card {
+    width: 32%;
+    background-color: #14213d;
+    position: relative;
+  }
+  
+  .card:hover {
+    top: -10px;
+  }
+  
+  .card-content {
+    padding: 0.5rem 1rem;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+  
+  .card a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .card p {
+    color: #ff5a1f;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .card p:hover {
+    color: #ff5a1fbb;
+  }
+  
+  .float-left {
+    float: left;
+    margin-right: 1.8rem;
+    width: 50%;
+  }
+  
+  /**************** Skill area ****************/
+  
+  .skill {
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+  }
+  
+  .skill:last-child {
+    margin-bottom: 0;
+  }
+  
+  .skill label {
+    font-size: 1.5rem;
+    flex: 2;
+  }
+  
+  .fa-html5:hover {
+    color: #e34f26;
+  }
+  .fa-css3:hover {
+    color: #264de4;
+  }
+  .fa-js-square:hover {
+    color: #f7df1e;
+  }
+  .fa-react:hover {
+    color: #00d8ff;
+  }
+  
+  progress[value] {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+  
+    /* Get rid of default border in Firefox. */
+    border: none;
+  
+    /* dimensions */
+    width: 5rem;
+    height: 1.5rem;
+  
+    /* For IE10 */
+    color: blue;
+  
+    flex: 8;
+  }
+  
+  progress[value]::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5) inset;
+  }
+  progress[value]::-webkit-progress-value {
+    background: rgb(255, 90, 31);
+    background-image: -webkit-linear-gradient(
+      150deg,
+      rgba(255, 90, 31, 1) 50%,
+      rgba(51, 238, 255, 1) 100%
+    );
+    border-radius: 2px;
+  }
+  
+  .skill p {
+    flex: 1;
+    text-align: right;
+  }
+  
+  /**************** Footer area ****************/
+  
+  footer {
+    clear: both;
+    background-color: #14213d;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  
+  /**************** Form ****************/
+  
+  #contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+  }
+  
+  form {
+    margin-top: 2rem;
+    background-color: #abc7d9;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 5px;
+    padding: 1.5rem;
+  }
+  
+  .form-input {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    color: #05080f;
+    font-weight: 300;
+    font-size: 1.5rem;
+    text-align: left;
+    display: block;
+  }
+  
+  input {
+    height: 2rem;
+    border-radius: 5px;
+    padding: 1.2rem 0.5rem;
+    width: 100%;
+  }
+  
+  textarea {
+    max-width: 100%;
+    min-height: 12rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+  
+  button {
+    background-color: #33eeff;
+    color: #14213d;
+    padding: 1.2rem;
+    text-transform: uppercase;
+    box-shadow: 0 0 5px #aaa;
+    cursor: pointer;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  button:hover {
+    background-color: #ff5a1f;
+    transition: all 0.25s ease;
+  }
+  
+  .chakra-font {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .contact-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .contact-info {
+    width: 49%;
+  }
+  
+  /**************** Tablet support ****************/
+  @media (max-width: 768px) {
+    header {
+      display: block;
+    }
+  
+    h1 {
+      font-size: 3rem;
+    }
+  
+    .card {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    .card:hover {
+      top: 0;
+    }
+  
+    progress[value] {
+      flex: 4;
+    }
+  }
+  
+  /**************** Mobile support ****************/
+  @media (max-width: 576px) {
+    .back-to-top {
+      display: none;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    header li {
+      margin: 0 0.5rem;
+    }
+  
+    footer h2 {
+      font-size: 2rem;
+    }
+  
+    form {
+      width: 90vw;
+    }
+  
+    .contact-info {
+      width: 100%;
+    }
+  
+    .float-left {
+      width: 100%;
+      margin: 1rem 0;
+    }
+  
+    .float-right {
+      margin: 1rem 0;
+      width: 100%;
+    }
+    .skills-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+  
+    .skill {
+      width: 100%;
+      margin-bottom: 2rem;
+      display: block;
+    }
+  
+    .skill label {
+      display: block;
+    }
+  
+    progress[value] {
+      width: 100%;
+    }
+  }
