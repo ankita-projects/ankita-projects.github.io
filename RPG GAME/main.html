@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Object Testing</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Simple RPG</h1>
+      <a href="object_test.html"
+        ><button class="invisible" name="reset" id="reset">Reset</button></a
+      >
+      <div class="playerInfo">
+        <button
+          onclick="selectCharacterWindow()"
+          name="yourinfo"
+          id="selectPlayer"
+        >
+          Select Player
+        </button>
+      </div>
+      <div class="playerEnemyDisplay">
+        <div class="player">
+          <div id="selectedPlayer" class="selectedPlayer"></div>
+          <div class="label" id="selectedPlayerName"></div>
+          
+        </div>
+        <p>You will fight against</p>
+        <div class="enemy">
+          <div id="selectedEnemy" class="selectedPlayer"></div>
+          <div class="label" id="selectedEnemyName"></div>
+        </div>
+      </div>
+      <div class="health-container" id="health">
+        <div class="health">
+          <label for="health">Player Health</label>
+          <progress id="PlayerHealth" value="100" max="100"></progress>
+          <p id="playerHealthCount">100</p>
+        </div>
+        <div class="health">
+          <label for="health">Enemy Health</label>
+          <progress id="villanHealth" value="100" max="100"></progress>
+          <p id="enemyHealthCount">100</p>
+        </div>
+      </div>
+      <section id="attack"></section>
+      <section id="showCharacters">
+        <p>Select Character</p>
+        <div class="showCharacters" id="characters"></div>
+          </section>
+          <div class="attack">
+        <button onclick="attackClickHandler()" name="turn" id="turn">
+          Attack
+        </button>
+      </div>
+    </div>
+    <section id="player1"></section>
+    <section id="player2"></section>
+  
+    <script src="script.js"></script>
+    <script src="character.js"></script>
+  </body>
+</html>
