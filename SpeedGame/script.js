@@ -5,10 +5,10 @@ let overlay = document.getElementById("gameResult");
 let gameover = document.getElementById("displayScore");
 let close = document.getElementById("close");
 
-let hitCount = 0;
-let missCount = 0;
+let hitCount = 0; //counter intialized to 0,
+let missCount = 0; // miss hiting
 let intervalId;
-let birdCount = 0;
+let birdCount = 0; //number of time bird appeared intialized to 0
 let audio = new Audio();
 
 const playAudio = (source, loop) => {
@@ -29,11 +29,6 @@ let movingCircles = () => {
     .getElementById("bulb" + d)
     .style.setProperty("content", "url(./image.png)");
   birdCount++;
-  if (hitCount >= 5) {
-    speed = 1000;
-    intervalId = setInterval(movingCircles, speed);
-  }
-
   if (birdCount > hitCount + 3) {
     // After missed three highlighted bulbs game ends
     endGame();
@@ -72,7 +67,8 @@ const endGame = () => {
   playAudio("sounds/gameOver.wav", false);
   document.getElementById("start").style.display = "block"; // Make start button visible
   document.getElementById("stop").style.display = "none"; // Hide stop button
-  clearTimeout(intervalId); // Stop timeout
+  //clearTimeout(intervalId); // Stop timeout
+  clearInterval(intervalId); // Stop timeout
   console.log("Game over");
   overlay.style.visibility = "visible"; // Make overlay visible
   gameover.textContent = `Your score is ${hitCount} & You missed ${missCount} `; //Show score
