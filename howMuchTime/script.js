@@ -80,8 +80,8 @@ var holidayList = [
 submit = (event) => {
   event.preventDefault();
 
-  let date1 = new Date(document.getElementById("date").value);
-  let date2 = new Date();
+  let date1 = new Date(document.getElementById("date1").value);
+  let date2 = new Date(document.getElementById("date").value);
   let Difference_In_Time = date1.getTime() - date2.getTime();
   let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
   let daysLeft = Math.trunc(Difference_In_Days);
@@ -153,21 +153,21 @@ getBankHolidaysExceptWeekend = (year) => {
 
 // setInterval after every second
 let timer = setInterval(() => {
-  let date1 = new Date(document.getElementById("date").value);
-  // Get the new time/date
+  let date1 = new Date(document.getElementById("date1").value);
+  // new time/date
   let update = new Date();
-  // Calculate the new difference
+  //the new difference
   let newDiff = date1 - update;
   // Convert miliseconds into days, hours, minutes and seconds
   let liveDiff = convertMiliseconds(newDiff);
-  // Display/Update result on screen
+  //Update result on screen
   countdown.textContent = `
       ${liveDiff["d"].toString().padStart(2, "0")} days 
       ${liveDiff["h"].toString().padStart(2, "0")} hours 
       ${liveDiff["m"].toString().padStart(2, "0")} minutes 
       ${liveDiff["s"].toString().padStart(2, "0")} seconds `;
 
-  // Stop interval once countdown has reached 0
+  // Stop interval once countdown  reached 0
   if (liveDiff <= 0) {
     clearInterval(timer);
   }

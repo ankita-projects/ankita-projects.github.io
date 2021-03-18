@@ -9,6 +9,9 @@ body{
     text-align: center;
     height: 100%;
 }
+.logo{
+    border-radius: 1rem;
+}
 .display{
     display: flex;
     justify-content:space-between;

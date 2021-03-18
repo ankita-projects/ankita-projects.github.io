@@ -1,5 +1,5 @@
 # ankita-projects.github.io
-This repository will cióntain my bootstrap learning projects
+This repository will contains my bootstrap learning projects
 
 ## Project 1 Home page for Huvikumpu iltapäiväkerho ry
 
