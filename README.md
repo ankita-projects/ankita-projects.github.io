@@ -1,5 +1,5 @@
 # ankita-projects.github.io
-This repository will contains my bootstrap learning projects
+Welcome to my github page repository, this repo shows my learning about bootstrap, HTML ,CSS & Javascript and I will keep adding on new stuff here. 
 
 ## Project 1 Home page for Huvikumpu iltapäiväkerho ry
 
