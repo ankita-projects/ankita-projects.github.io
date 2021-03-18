@@ -23,11 +23,17 @@ h1{
 }
 .container{
     display: flex;
-    justify-content: center;
-    flex-flow: wrap;
+    justify-content:center;
+    flex-flow:nowrap;
     margin: 2rem;
     padding: 30px;
     margin: 5px 5px 5px 0;
+}
+.start{
+    margin: 1rem;
+}
+.end{
+    margin :1rem;
 }
 
 .container1{
