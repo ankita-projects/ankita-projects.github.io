@@ -1,5 +1,6 @@
 body {
-  background-image: linear-gradient(to right, #e4f07e, #e7d19f);
+  background-image: url(./background.png);
+  background-size: cover;
   font-family:"Press Start 2P", cursive;
   font-size: 25px;
   background-repeat: no-repeat;
@@ -7,6 +8,7 @@ body {
   color: rgb(7, 7, 7);
   text-align: center;
   height: 100%;
+  width: 100%;
 }
 .heading {
   color: rgb(236, 93, 93);
@@ -16,7 +18,7 @@ body {
   font-size: 40px;
 }
 .playerName{
-  background-color:hsl(2, 45%, 71%);
+  background-color:hsl(115, 29%, 61%);
   padding: 50px 0 0 0;
   margin:1rem 4rem 1rem 30rem;
   width: 50%;
