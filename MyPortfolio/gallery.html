@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio project for Business College Helsinki HTML and CSS3 course"
+    />
+    <meta name="author" content="Margit Tennosaar" />
+    <meta name="keywords" content="HTML5, CSS3, Portfolio, school-project" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="icons.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>MyPortfolio</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="container">
+          <div class="logo"><a href="./index.html">Ankita Bhatnagar</a></div>
+          <nav>
+            <button id="mobileButton">
+              <span class="material-icons"> menu </span>
+            </button>
+            <ul>
+              <li><a href="./index.html#work">Work</a></li>
+              <li><a href="./index.html#experience">Experience</a></li>
+              <li><a href="./index.html#skills">Skills</a></li>
+              <li><a href="./gallery.html">Gallery</a></li>
+              <li><a href="./animation.html">Timeline</a></li>
+              <li><a href="./gallery.html#footer">Contact me</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="gallery">
+        <div class="container">
+          <div class="gallery-group">
+            <div class="grid-item-1 grid-div">
+              <img
+                class="grid-item"
+                src="https://source.unsplash.com/collection/1132634/1600x900"
+                alt="random pic from unsplash"
+              />
+            </div>
+            <div class="grid-item-2 grid-div">
+              <img
+                class="grid-item"
+                src="https://source.unsplash.com/collection/306252/1600x900"
+                alt="random pic from unsplash"
+              />
+            </div>
+            <div class="grid-item-3 grid-div">
+              <img
+                class="grid-item"
+                src="https://source.unsplash.com/collection/1240111/1600x900"
+                alt="random pic from unsplash"
+              />
+            </div>
+            <div class="grid-item-4 grid-div">
+              <img
+                class="grid-item"
+                src="https://source.unsplash.com/collection/136493/1600x900"
+                alt="random pic from unsplash"
+              />
+            </div>
+            <div class="grid-item-5 grid-div">
+              <img
+                class="grid-item"
+                src="https://source.unsplash.com/collection/261936/1600x900"
+                alt="random pic from unsplash"
+              />
+            </div>
+            <div class="grid-item-6 grid-div">
+              <img
+                class="grid-item"
+                src="https://source.unsplash.com/collection/1394721/1600x900"
+                alt="random pic from unsplash"
+              />
+            </div>
+            <div class="grid-item-7 grid-div">
+              <img
+                class="grid-item"
+                src="https://source.unsplash.com/collection/46/1600x900"
+                alt="grid-item random pic from unsplash"
+              />
+            </div>
+            <div class="grid-item-8 grid-div">
+              <img
+                class="grid-item"
+                src="https://source.unsplash.com/collection/54/1600x900"
+                alt="random pic from unsplash"
+              />
+            </div>
+            <div class="grid-item-9 grid-div">
+              <img
+                class="grid-item"
+                src="https://source.unsplash.com/collection/827807/1600x900"
+                alt="random pic from unsplash"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer">
+      <div class="container">
+        <h2>Contact me</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Your email</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message to me</label>
+            <textarea name="message" id="message"></textarea>
+          </div>
+          <button type="submit">Send message</button>
+        </form>
+        <p class="copyright">Copyright &copy; My Website 2021</p>
+      </div>
+      <button id="backToTop">
+        Top<span class="material-icons"> arrow_upward </span>
+      </button>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

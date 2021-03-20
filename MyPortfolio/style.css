@@ -1,0 +1,522 @@
+:root {
+  --font: League Spartan;
+  --primary-color: #8eeef7;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #98b9bd;
+  font-family: var(--font);
+  color: black;
+}
+input,
+textarea,
+button {
+  font-family: var(--font);
+}
+
+img {
+  width: 200px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+h2 {
+  margin: 2rem 0;
+}
+
+p {
+  margin: 1rem 0;
+  line-height: 1.5;
+}
+a {
+  font-family: var(--font);
+  text-decoration: none;
+  color: rgb(224, 176, 158);
+}
+i {
+  font-size: 3rem;
+}
+
+.bg {
+  background-color: rgb(7, 7, 7);
+}
+/**************** Header area ****************/
+
+header {
+  background: url("https://source.unsplash.com/YpVOQir8dIY") no-repeat fixed
+    center center/cover;
+}
+
+.navbar {
+  font-family: var(--font);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.navbar .container {
+  position: relative;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#mobileButton {
+  display: none;
+}
+header nav ul {
+  list-style-type: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  padding: 0 1rem;
+}
+header nav a:hover {
+  background-color: rgb(14, 13, 13);
+  font-size: 2rem;
+}
+
+header a {
+  text-decoration: none;
+  color: rgb(107, 221, 224);
+  font-size: 20px;
+}
+header .logo a {
+  font-size: 2rem;
+  font-family: var(--font);
+}
+
+#hero-banner {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero-banner h2 {
+  font-size: 5rem;
+  color: rgb(107, 221, 224);
+  text-align: center;
+}
+/**************** Main area ****************/
+
+#work,
+#experience,
+#skills,
+#gallery {
+  padding: 50px;
+  min-height: 500px;
+  scroll-margin-top: 5rem;
+}
+
+.box {
+  transition: all 0.2s ease-out;
+}
+.box:hover {
+  bottom: 10px;
+}
+#work .work_boxes {
+  display: flex;
+  justify-content: space-between;
+}
+
+#work .box {
+  background-color: white;
+  width: 32%;
+  padding: 1rem;
+  border-radius: 2px;
+  border: 1px solid #eee;
+}
+
+#work .box:hover {
+  box-shadow: 0 0 25px #6ed9dd;
+  transition: all 0.2s ease-out;
+}
+
+#work .box h3 {
+  margin-bottom: 1rem;
+}
+#work .box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+#experience {
+  background: rgb(229, 236, 238);
+  font-size: 20px;
+}
+
+#skills img {
+  float: left;
+  margin-right: 2rem;
+}
+
+#skills .skills_group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.skill {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.skill:last-child {
+  margin-bottom: 0;
+}
+
+.skill label {
+  font-size: 1.5rem;
+  flex: 2;
+}
+
+.fa-html5:hover {
+  color: #ebb0a0;
+}
+.fa-css3:hover {
+  color: #264de4;
+}
+.fa-js-square:hover {
+  color: #f7df1e;
+}
+.fa-react:hover {
+  color: #00d8ff;
+}
+
+/************Skills*****************/
+progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  width: 4rem;
+  height: 1.5rem;
+  flex: 8;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px #00000080 inset;
+}
+progress[value]::-webkit-progress-value {
+  background: rgb(240, 189, 189);
+  background-image: -webkit-linear-gradient(
+    150deg,
+    var(--accent-color-1) 50%,
+    var(--accent-color-2) 100%
+  );
+  border-radius: 2px;
+}
+
+.skill p {
+  flex: 1;
+  text-align: right;
+}
+
+/* Gallery */
+
+#gallery {
+  margin-top: 50px;
+}
+.gallery-group {
+  display: grid;
+  grid-template-areas:
+    "a a b b c c"
+    "a a d d c c"
+    "e h h h c c"
+    "f h h h i i"
+    "g h h h i i";
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(6, 1fr);
+  position: relative;
+}
+.grid-div {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.grid-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.grid-item:hover {
+  transform: scale(1.05);
+}
+
+.grid-item-1 {
+  grid-area: a;
+}
+.grid-item-2 {
+  grid-area: b;
+}
+.grid-item-3 {
+  grid-area: c;
+}
+.grid-item-4 {
+  grid-area: d;
+}
+.grid-item-5 {
+  grid-area: e;
+}
+.grid-item-6 {
+  grid-area: f;
+}
+.grid-item-7 {
+  grid-area: g;
+}
+.grid-item-8 {
+  grid-area: h;
+}
+.grid-item-9 {
+  grid-area: i;
+}
+
+/**************** Footer area ****************/
+
+footer {
+  font-family: var(--font);
+  font-size: 25px;
+  background-color: rgb(165, 170, 170);
+  text-align: center;
+  color: white;
+  padding: 8px;
+}
+footer .copyright {
+  margin-top: 2rem;
+  font-size: 12px;
+}
+
+/**************** Form ****************/
+
+footer form {
+  margin: 0 auto;
+  width: 60%;
+  text-align: left;
+}
+
+footer form .form-group {
+  margin: 2rem 0;
+  display: flex;
+}
+
+footer form label {
+  width: 200px;
+  display: inline-block;
+  text-align: left;
+}
+
+footer form .form-group input,
+footer form .form-group textarea {
+  font-family: var(--font);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  width: 60%;
+  font-size: 1rem;
+}
+
+footer form .form-group textarea {
+  min-height: 100px;
+}
+
+footer button {
+  background-color: rgb(10, 10, 10);
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  padding: 1rem 2rem;
+  color: #fff;
+  margin-left: 205px;
+  font-family: var(--font);
+  font-size: inherit;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.material-icons {
+  font-size: 1rem;
+}
+/**************social media****************/
+
+.social-menu ul {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  padding: 0;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+a {
+  height: 100%;
+  width: 100%;
+}
+.social-menu ul li {
+  list-style: none;
+  margin: 0 15px;
+}
+.social-menu ul li .fa {
+  font-size: 25px;
+  line-height: 60px;
+  transition: 6s;
+  color: #000;
+}
+.social-menu ul li .fa:hover {
+  color: #fff;
+}
+.social-menu ul li a {
+  width: 60px;
+  height: 60px;
+  margin-top: 50rem;
+  border-radius: 60%;
+  background-color: #fff;
+  text-align: center;
+  transition: 0.6s;
+  box-shadow: 0 3px 4px rgb(179, 226, 238);
+}
+.social-menu ul li a:hover {
+  transform: translate(0, -10px);
+}
+.social-menu ul li:nth-child(1) a:hover {
+  background-color: #3b5999;
+}
+.social-menu ul li:nth-child(2) a:hover {
+  background-color: #55acee;
+}
+.social-menu ul li:nth-child(3) a:hover {
+  background-color: #e4405f;
+}
+.social-menu ul li:nth-child(4) a:hover {
+  background-color: #0077b5;
+}
+
+/**************** Tablet support ****************/
+
+@media (max-width: 899px) {
+  #mobileButton {
+    display: block;
+    background-color: transparent;
+    border: none;
+  }
+  #mobileButton .material-icons {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav.responsive ul {
+    display: block;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 55px;
+  }
+
+  nav.responsive ul li {
+    display: block;
+  }
+
+  nav.responsive ul li a {
+    display: block;
+    padding: 1rem 2rem;
+  }
+  #experience {
+    display: block;
+  }
+  #experience img {
+    width: 100%;
+  }
+  footer form {
+    width: 80%;
+    text-align: left;
+  }
+  footer form .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  footer form .form-group input,
+  footer form .form-group textarea,
+  footer form button {
+    width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/**************** Mobile support ****************/
+@media (max-width: 576px) {
+  .main_nav {
+    display: block;
+  }
+  header nav ul {
+    margin-top: 1rem;
+  }
+  header nav ul li {
+    padding: 1rem;
+  }
+
+  #hero-banner h2 {
+    font-size: 2rem;
+    color: rgb(107, 221, 224);
+    text-align: center;
+  }
+
+  #work,
+  #experience,
+  #skills {
+    padding: 1rem;
+  }
+  #work .work_boxes {
+    display: block;
+  }
+  #work .box {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  #experience img,
+  #skills img {
+    width: 100%;
+
+    float: none;
+    margin: 0;
+  }
+  footer form .form-group {
+    display: block;
+  }
+}
