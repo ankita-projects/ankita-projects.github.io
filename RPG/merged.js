@@ -49,7 +49,7 @@
     let enemyName = document.getElementById("selectedEnemyName");
     enemyName.innerHTML=enemy.id;
     //picture.innerHTML = `<img src="${enemy.imageurl}" alt="char-image">`; // enemy image.
-    
+
     let attackResult = document.getElementById("displayBox");
     let display = document.createElement("p");
     display.innerHTML = `You are playing as a ${player.id}, HP: ${player.health} DMG: ${player.damage} DEF: ${player.defense}||`;
@@ -65,6 +65,7 @@
 // ************************************* Functions *************************************
     
     function newEnemy() { // function used to get a new enemy after defeating one.
+       
         randomNum = Math.round(Math.random() * 4);
         enemy = new Character(json.enemies[randomNum].id, json.enemies[randomNum].health, json.enemies[randomNum].damage, json.enemies[randomNum].defense, json.enemies[randomNum].imageurl, json.enemies[randomNum].whichFunc);
 
@@ -73,6 +74,7 @@
     }
 
     function ogreAttack() {
+        
         console.log(`${enemy.id} attacks you...`);
         player.health = player.health - (enemy.damage - player.defense);
         if (player.health >= 1) {
@@ -85,6 +87,15 @@
             document.querySelector("#turn").classList.add("invisible"); // replace Attack button with Reset.
             document.querySelector("#reset").classList.remove("invisible");
         };
+  
+        let attackResult = document.getElementById("displayBox");
+        let display = document.createElement("p");
+        display.innerHTML = `${enemy.id} hits you with his club, dealing ${enemy.damage - player.defense} damage! Your HP: ${player.health}||`;
+       attackResult.appendChild(display);
+       let result1 = document.createElement("p");
+       result1.innerHTML = `${enemy.id}'s final club swing dealt ${enemy.damage - player.defense} damage and defeated you!`;
+       attackResult.appendChild(result1);
+        
     }
 
     function skeleAttack() {
@@ -100,6 +111,14 @@
             document.querySelector("#turn").classList.add("invisible"); // replace Attack button with Reset.
             document.querySelector("#reset").classList.remove("invisible");
         };
+
+        let attackResult = document.getElementById("displayBox");
+        let display = document.createElement("p");
+        display.innerHTML = `${enemy.id} strikes bone against bone, dealing ${enemy.damage - player.defense} damage! Your HP: ${player.health}`;
+       attackResult.appendChild(display);
+       let result1 = document.createElement("p");
+       result1.innerHTML = `${enemy.id}'s final attack dealt ${enemy.damage - player.defense} damage and defeated you!`;
+       attackResult.appendChild(result1);
     }
 
     function wereAttack() {
@@ -115,7 +134,16 @@
             document.querySelector("#turn").classList.add("invisible"); // replace Attack button with Reset.
             document.querySelector("#reset").classList.remove("invisible");
         };
-    }
+
+        let attackResult = document.getElementById("displayBox");
+        let display = document.createElement("p");
+        display.innerHTML =`${enemy.id} slashes you, dealing ${enemy.damage - player.defense} damage! Your HP: ${player.health}`;
+       attackResult.appendChild(display);
+       let result1 = document.createElement("p");
+       result1.innerHTML = `${enemy.id}'s final slash dealt ${enemy.damage - player.defense} damage and defeated you!`;
+       attackResult.appendChild(result1);
+    };
+    
 
     function demonAttack() {
         console.log(`${enemy.id} attacks you...`);
@@ -130,6 +158,14 @@
             document.querySelector("#turn").classList.add("invisible"); // replace Attack button with Reset.
             document.querySelector("#reset").classList.remove("invisible");
         };
+   
+        let attackResult = document.getElementById("displayBox");
+        let display = document.createElement("p");
+        display.innerHTML =`${enemy.id} uses black magic, dealing ${enemy.damage - player.defense} damage! Your HP: ${player.health}`;
+       attackResult.appendChild(display);
+       let result1 = document.createElement("p");
+       result1.innerHTML = `${enemy.id}'s final dark spell dealt ${enemy.damage - player.defense} damage and defeated you!`;
+       attackResult.appendChild(result1);
     }
 
     function artoriasAttack() {
@@ -145,6 +181,13 @@
             document.querySelector("#turn").classList.add("invisible"); // replace Attack button with Reset.
             document.querySelector("#reset").classList.remove("invisible");
         };
+  
+        let display = document.createElement("p");
+        display.innerHTML =`${enemy.id} strikes you with his Abyss Greatsword, dealing ${enemy.damage - player.defense} damage! Your HP: ${player.health}`;
+       attackResult.appendChild(display);
+       let result1 = document.createElement("p");
+       result1.innerHTML = `${enemy.id} swings his Greatsword for the final time dealing ${enemy.damage - player.defense} damage and defeats you!`;
+       attackResult.appendChild(result1);
     }
     
     function heroAttack() {
@@ -164,7 +207,15 @@
             newEnemy(); // create a new enemy after defeating the previous one.
             console.log(`New enemy ${enemy.id} appeared! HP: ${enemy.health} DMG: ${enemy.damage} DEF: ${enemy.defense}`);
         }
+  
+        let attackResult = document.getElementById("displayBox");
+        let display = document.createElement("p");
+        display.innerHTML = `You dealt ${player.damage - enemy.defense} damage! ${enemy.id} HP: ${enemy.health}`;
+       attackResult.appendChild(display);
+       let result1 = document.createElement("p");
+       result1.innerHTML = `Your battle experience defeating multiple foes has made you stronger; you gained 3 HP! Your HP: ${player.health}`;
     }
+  
 
     let methodArray = [ogreAttack, skeleAttack, wereAttack, demonAttack, artoriasAttack, heroAttack]; // functions to be used by the objects as methods.
 
