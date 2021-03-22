@@ -33,11 +33,22 @@
 // ************************************* Images *************************************
 
     let sprite = document.querySelector("#sprite");
-    sprite.innerHTML = `<img src="${player.imageurl}" alt="char-image">`; // player image.
+    let img = document.createElement("img");
+    img.setAttribute("src",player.imageurl);
+    img.setAttribute("alt","char-image");
+    sprite.appendChild(img);
+
+   // sprite.innerHTML = `<img src="${player.imageurl}" alt="char-image">`; // player image.
     let playerName = document.getElementById("selectedPlayerName");
-    playerName
+    playerName.innerHTML=player.id;
     let picture = document.querySelector("#picture");
-    picture.innerHTML = `<img src="${enemy.imageurl}" alt="char-image">`; // enemy image.
+    let img1 = document.createElement("img");
+    img1.setAttribute("src",enemy.imageurl);
+    img1.setAttribute("alt","char-image");
+    picture.appendChild(img1);
+    let enemyName = document.getElementById("selectedEnemyName");
+    enemyName.innerHTML=enemy.id;
+    //picture.innerHTML = `<img src="${enemy.imageurl}" alt="char-image">`; // enemy image.
 
     console.log(`You are playing as a ${player.id}, HP: ${player.health} DMG: ${player.damage} DEF: ${player.defense}`);
 

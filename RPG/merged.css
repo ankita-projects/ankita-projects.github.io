@@ -61,6 +61,10 @@ body {
    );
    border-radius: 2px;
  }
+ .damage{
+     display: flex;
+     justify-content: space-between;
+ }
   button{
     display: block;
     margin: auto;
@@ -78,6 +82,14 @@ body {
     justify-content: space-between;
     margin:10rem ;
 }
+.displayBox{
+    width: 80%;
+    height:40%;
+    border:solid black;
+    padding: 70px;
+    margin-bottom: 5rem;;
+}
+
 .invisible {
     display: none;
 }
