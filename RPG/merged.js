@@ -30,7 +30,7 @@
 
     let enemy = new Character(json.enemies[randomNum].id, json.enemies[randomNum].health, json.enemies[randomNum].damage, json.enemies[randomNum].defense, json.enemies[randomNum].imageurl, json.enemies[randomNum].whichFunc); // first enemy created.
 
-// ************************************* Images *************************************
+// ************************************* Images & Names  *************************************
 
     let sprite = document.querySelector("#sprite");
     let img = document.createElement("img");
@@ -49,6 +49,14 @@
     let enemyName = document.getElementById("selectedEnemyName");
     enemyName.innerHTML=enemy.id;
     //picture.innerHTML = `<img src="${enemy.imageurl}" alt="char-image">`; // enemy image.
+    
+    let attackResult = document.getElementById("displayBox");
+    let display = document.createElement("p");
+    display.innerHTML = `You are playing as a ${player.id}, HP: ${player.health} DMG: ${player.damage} DEF: ${player.defense}||`;
+   attackResult.appendChild(display);
+  let result1 = document.createElement("p");
+  result1.innerHTML = `New enemy ${enemy.id} appeared! HP: ${enemy.health} DMG: ${enemy.damage} DEF: ${enemy.defense}||`;
+  attackResult.appendChild(result1);
 
     console.log(`You are playing as a ${player.id}, HP: ${player.health} DMG: ${player.damage} DEF: ${player.defense}`);
 
