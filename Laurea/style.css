@@ -43,4 +43,86 @@ li{
     margin:2rem;
     list-style-type: none;
 }
+.image{
+    text-align: center;
+}
+h2{
+    margin:2rem;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  #skills {
+    padding: 50px;
+    min-height: 500px;
+    scroll-margin-top: 5rem;
+  }
+  #skills img {
+    float: left;
+    margin-right: 2rem;
+  }
+  
+  #skills .skills_group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 5rem;
+  }
+  
+  .skill {
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+  }
+  
+  .skill:last-child {
+    margin-bottom: 0;
+  }
+  
+  .skill label {
+    font-size: 1.5rem;
+    flex: 2;
+  }
+ 
+  #corners{
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px; 
+
+
+  }
+/************Skills*****************/
+progress[value] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    width: 4rem;
+    height: 1.5rem;
+    flex: 8;
+  }
+  
+  progress[value]::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px #00000080 inset;
+  }
+  progress[value]::-webkit-progress-value {
+    background: rgb(190, 228, 65);
+    background-image: -webkit-linear-gradient(
+      150deg,
+      var(--accent-color-1) 50%,
+      var(--accent-color-2) 100%
+    );
+    border-radius: 2px;
+  }
+  
+  .skill p {
+    flex: 1;
+    text-align: right;
+    margin: 1rem 0;
+    line-height: 1.5;
+  }
   
