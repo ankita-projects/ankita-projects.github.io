@@ -18,9 +18,7 @@ h1 {
     display: flex;
     justify-content: space-evenly;
 }
-img{
-    background-color: rgb(169, 128, 207);
-  }
+
   .footer {
     position: fixed;
     left: 0;
@@ -72,5 +70,7 @@ img{
     align-items: center;
     color: aliceblue;
    }
-
+   [src=''] {
+    visibility: hidden;
+}
  
